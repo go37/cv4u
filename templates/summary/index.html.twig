@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your CV</title>
+</head>
+
+<body>
+    <h1>Your CV</h1>
+    <p>firstname : {{ app.user.firstname }}</p>
+    <p>lastname : {{ app.user.lastname }}</p>
+    <p>email : {{ app.user.email }}</p>
+    <p>phone number : {{ app.user.phone }}</p>
+    {% for school in app.user.schools %}
+    <p>School : {{ school.name }}</p>
+    <p>Location : {{ school.location }}</p>
+    <p>Start date : {{ school.start|date('d/m/Y') }}</p>
+    <p>End date : {{ school.end|date('d/m/Y') }}</p>
+    {% endfor %}
+</body>
+
+</html>

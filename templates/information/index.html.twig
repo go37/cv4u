@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Your informations{% endblock %}
+
+{% block body %}
+    <h1>Your personnal informations</h1>
+    {% if is_granted("ROLE_USER") %}
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+        <div class="form_informations">
+            <p>
+                Email : {{ app.user.email }}
+            </p>
+            <p>
+                {{ form_label(form.firstname, 'Firstname', {'label_attr': {'class': 'form_label'}}) }}
+                {{ form_widget(form.firstname, {'attr': {'class': 'contact_widget', 'value': app.user.firstname}}) }}
+            </p>
+            <p>
+                {{ form_label(form.lastname, 'Lastname', {'label_attr': {'class': 'form_label'}}) }}
+                {{ form_widget(form.lastname, {'attr': {'class': 'contact_widget', 'value': app.user.lastname}}) }}
+            </p>
+            <p>
+                {{ form_label(form.phone, 'Phone number', {'label_attr': {'class': 'form_label'}}) }}
+                {{ form_widget(form.phone, {'attr': {'class': 'contact_widget', 'value': app.user.phone}}) }}
+            </p>
+        </div>
+        <input type="submit" value="Submit" />
+    {{ form_end(form) }}
+    {% else %}
+        <p class="text-center">You are not connected !</p>
+        <a class="text-center" href="{{ path('home') }}">Back to home page</a>
+    {% endif %}
+{% endblock %}

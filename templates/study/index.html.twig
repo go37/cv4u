@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Study index{% endblock %}
+
+{% block body %}
+    <h1>Study index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Location</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for study in studies %}
+            <tr>
+                <td>{{ study.id }}</td>
+                <td>{{ study.location }}</td>
+                <td>{{ study.start ? study.start|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ study.end ? study.end|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('study_show', {'id': study.id}) }}">show</a>
+                    <a href="{{ path('study_edit', {'id': study.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('study_new') }}">Create new</a>
+{% endblock %}
