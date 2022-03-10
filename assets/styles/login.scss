@@ -1,0 +1,72 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    .form-login {    
+        margin-top: 1.5rem;
+    }
+
+    .form-class {
+        font-weight: bold;
+        margin-top: 1.5rem;
+    }
+
+    .email {
+        border: none;
+        border-bottom: 2px solid $dark;
+        background-image: url(/assets/images/email.png);
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 30px 30px;
+        text-indent: 3rem;
+        height: 3rem;
+        max-width: 500px;
+    }
+
+    .password {
+        border: none;
+        border-bottom: 2px solid $dark;
+        background-image: url(/assets/images/password.png);
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 30px 30px;
+        text-indent: 3rem;
+        height: 3rem;
+        max-width: 500px;
+    }
+
+    .email:focus, .password:focus {
+        outline: none;
+    }
+
+    .submit {
+        border-radius: 1rem;
+        border: 2px solid $dark;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        width: 80%;
+    }
+
+    .error {
+        display: flex;
+        align-items: center;
+        border: 2px solid $alert-border;
+        border-radius: 0.25rem;
+        background-image: url(/assets/images/danger.png);
+        background-position: 1rem;
+        background-repeat: no-repeat;
+        background-size: 30px 30px;
+        background-color: $alert-bg !important;
+        text-indent: 3rem;
+        height: 3rem;
+        color: $alert-color !important;
+        padding: 1rem;
+    }
+
+    @media (min-width: $width-tablet) {
+
+    }
+}

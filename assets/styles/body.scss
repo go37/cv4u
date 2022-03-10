@@ -2,22 +2,18 @@
     color: $dark !important;
     background-color: $light !important;
 }
+
 body {
     margin: 0;
     min-width: $width-min;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    align-content: center;
 }
 
 header {
     border-bottom: 2px solid $dark;
-}
-
-section {
-    display: flex;
-    flex-direction: column;
-    margin: 5vmin 0;
 }
 
 footer {
@@ -42,15 +38,4 @@ a {
     padding-bottom: 5px;
     margin-right: 20px;
     width: 50px;
-}
-
-@media (min-width: $width-desktop) {
-
-    body {
-        align-items: center;
-    }
-
-    section {
-        margin-top: 20px;
-    }
 }

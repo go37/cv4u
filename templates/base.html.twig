@@ -15,8 +15,8 @@
         {% endblock %}
     </head>
     <body>
-        <header class="w-100">{% include 'components/_nav.html.twig' %}</header>
-        <section class="d-flex flex-column align-items-center justify-content-center">{% block body %}{% endblock %}</section>
-        <footer class="d-flex justify-content-around w-100 mt-auto">{% include 'components/_footer.html.twig' %}</footer>
+        {% include 'components/_nav.html.twig' %}
+        {% block body %}{% endblock %}
+        {% include 'components/_footer.html.twig' %}
     </body>
 </html>

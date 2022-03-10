@@ -1,48 +1,50 @@
 {# templates/components/_nav.html.twig #}
-<nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="{{ path('home') }}"><img src="{{ asset('build/images/favicon.png') }}" alt="CV4U logo" />CV 4 U</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="nav d-flex flex-column flex-lg-row align-items-end justify-content-end w-100">
-                {% if is_granted("ROLE_USER") %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('information') }}">Your Contact Informations</a>
+<header class="w-100">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ path('home') }}"><img src="{{ asset('build/images/favicon.png') }}" alt="CV4U logo" />CV 4 U</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav d-flex flex-column flex-lg-row align-items-end justify-content-end w-100">
+                    {% if is_granted("ROLE_USER") %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('information') }}">Your Contact Informations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('school_index') }}">Your Studies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Your Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('summary') }}" target="_blank">Your CV</a>
+                        </li>
+                    {% endif %}
+                    {% if is_granted("ROLE_USER") %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ app.user.email }}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {% if is_granted("ROLE_USER") %}
+                                <li><a class="dropdown-item" href="{{ path('profile') }}">Your profile</a></li>
+                                <li><a class="dropdown-item" href="{{ path('settings') }}">Your settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                            {% endif %}
+                            <li><a class="dropdown-item" href="{{ path('logout') }}">Sign out</a></li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('school_index') }}">Your Studies</a>
+                    {% else %}
+                    <li>
+                        <a class="nav-link" href="{{ path('login') }}">Sign in</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Your Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('summary') }}" target="_blank">Your CV</a>
-                    </li>
-                {% endif %}
-                {% if is_granted("ROLE_USER") %}
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        {{ app.user.email }}
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        {% if is_granted("ROLE_USER") %}
-                            <li><a class="dropdown-item" href="{{ path('profile') }}">Your profile</a></li>
-                            <li><a class="dropdown-item" href="{{ path('settings') }}">Your settings</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                        {% endif %}
-                        <li><a class="dropdown-item" href="{{ path('logout') }}">Sign out</a></li>
-                    </ul>
-                </li>
-                {% else %}
-                <li>
-                    <a class="nav-link" href="{{ path('login') }}">Sign in</a>
-                </li>
-                {% endif %}
-            </ul>
+                    {% endif %}
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+</header>

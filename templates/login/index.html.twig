@@ -4,21 +4,28 @@
 {% block title %}Login{% endblock %}
 
 {% block body %}
-{% if error %}
-<div>{{ error.messageKey }}</div>
-{% endif %}
-<form action="{{ path('login') }}" method="post">
-    <label for="username">Email:</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}"/>
-
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="_password"/>
-
-    {# If you want to control the URL the user is redirected to on success
-    <input type="hidden" name="_target_path" value="/account"/> #}
-    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-    
-    <button type="submit">Sign in</button>
-</form>
-New here ? <a href="{{ path('app_register') }}">Create an account</a>
+    <section class="login mx-4">
+        {{ include('components/_flash_messages.html.twig') }}
+        {% if error %}
+            <div class="form-class error">{{ error.messageKey }}</div>
+        {% endif %}
+        <form class="form-login" action="{{ path('login') }}" method="post">
+            <div class="form-class">
+                <input type="text" id="username" class="email" name="_username" placeholder="Email address" value="{{ last_username }}" />
+            </div>
+            <div class="form-class">
+                <input type="password" id="password" class="password" name="_password" placeholder="Password" />
+            </div>
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+            <div class="form-class">
+                <button type="submit" class="btn submit">Sign in</button>
+            </div>
+            <div class="form-class">
+                <a href="{# path('reset_password') #}" title="Forgot your password ?">Forgot your password ?</a>
+            </div>
+            <div class="form-class">
+                <a href="{{ path('app_register') }}" title="Create an account">New here ? Create an account</a>
+            </div>
+        </form>
+    </section>
 {% endblock %}
