@@ -1,10 +1,10 @@
-.login {
+.register {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     
-    .form-login {    
+    .form-register {    
         margin-top: 1.5rem;
     }
 
@@ -48,21 +48,5 @@
         text-align: center;
         text-transform: uppercase;
         font-weight: bold;
-    }
-
-    .error {
-        display: flex;
-        align-items: center;
-        height: 3rem;
-        padding: 1rem;
-        border: 2px solid $danger-border !important;
-        border-radius: 0.25rem;
-        background-image: url(/assets/images/danger.png);
-        background-position: 1rem;
-        background-repeat: no-repeat;
-        background-size: 30px 30px;
-        background-color: $danger-bg !important;
-        text-indent: 3rem;
-        color: $danger-color !important;
     }
 }

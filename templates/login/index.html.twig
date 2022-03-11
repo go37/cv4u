@@ -5,9 +5,10 @@
 
 {% block body %}
     <section class="login mx-4">
+        <h1>Sign in with your account</h1>
         {{ include('components/_flash_messages.html.twig') }}
         {% if error %}
-            <div class="form-class error">{{ error.messageKey }}</div>
+            <div class="form-class alert alert-danger">{{ error.messageKey }}</div>
         {% endif %}
         <form class="form-login" action="{{ path('login') }}" method="post">
             <div class="form-class">

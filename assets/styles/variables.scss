@@ -1,8 +1,26 @@
-$light: white;
-$dark: black;
-$alert-color: #842029;
-$alert-bg: #f8d7da;
-$alert-border: #f5c2c7;
+// width variables
 $width-min: 400px;
 $width-tablet: 768px;
 $width-desktop: 992px;
+$width-max: 1500px;
+
+// basics colors
+$light: white;
+$dark: black;
+
+// messages colors
+$danger-color: #842029;
+$danger-bg: #f8d7da;
+$danger-border: #f5c2c7;
+
+$warning-color: #664d03;
+$warning-bg: #fff3cd;
+$warning-border: #ffecb5;
+
+$success-color: #0f5132;
+$success-bg: #d1e7dd;
+$success-border: #badbcc;
+
+$info-color: #084298;
+$info-bg: #cfe2ff;
+$info-border: #b6d4fe;
