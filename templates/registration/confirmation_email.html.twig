@@ -1,12 +1,6 @@
 {# templates/registration/confirmation_email.html.twig #}
-<h1>Hi! Please confirm your email!</h1>
-
-<p>
-    Please confirm your email address by clicking the following link: <br><br>
-    <a href="{{ signedUrl }}">Confirm my Email</a>.
-    This link will expire in {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.
-</p>
-
-<p>
-    Cheers!
-</p>
+<h2>Hi! Please confirm your email !</h2>
+<p>Please confirm your email address by clicking the following link :</p>
+<p><a href="{{ signedUrl }}">Confirm my Email</a>.</p>
+<p>This link will expire in {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.</p>
+<p>Cheers !</p>

@@ -2,14 +2,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 3rem;
     margin-top: 1.5rem;
     padding: 1rem;
     border-radius: 0.25rem;
     background-position: 1rem;
     background-repeat: no-repeat;
     background-size: 30px 30px;
-    text-indent: 3rem;
 }
 
 .alert-danger {
@@ -36,6 +34,26 @@
 .alert-info {
     border: 2px solid $info-border !important;
     background-image: url(/assets/images/info.png);
+    background-color: $info-bg !important;
+    color: $info-color !important;
+}
+
+.alert-message-danger {
+    background-color: $danger-bg !important;
+    color: $danger-color !important;
+}
+
+.alert-message-warning {
+    background-color: $warning-bg !important;
+    color: $warning-color !important;
+}
+
+.alert-message-success {
+    background-color: $success-bg !important;
+    color: $success-color !important;
+}
+
+.alert-message-info {
     background-color: $info-bg !important;
     color: $info-color !important;
 }
