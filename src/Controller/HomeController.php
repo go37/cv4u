@@ -54,6 +54,7 @@ class HomeController extends AbstractController
 
     /**
      * @Route("/summary", name="summary")
+     * @IsGranted("ROLE_USER")
      */
     public function summary(): Response
     {
@@ -62,6 +63,7 @@ class HomeController extends AbstractController
 
      /**
      * @Route("/profile", name="profile")
+     * @IsGranted("ROLE_USER")
      */
     public function profile(): Response
     {
@@ -70,6 +72,7 @@ class HomeController extends AbstractController
 
      /**
      * @Route("/settings", name="settings")
+     * @IsGranted("ROLE_USER")
      */
     public function settings(): Response
     {

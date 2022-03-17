@@ -1,0 +1,70 @@
+.information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    .form-information {    
+        margin-top: 1.5rem;
+    }
+
+    .form-class {
+        margin-top: 1.5rem;
+        font-weight: bold;
+    }
+
+    input[type=text] {
+        max-width: 500px;
+        height: 3rem;
+        border: none;
+        border-bottom: 2px solid $dark;
+        text-indent: 3rem;
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 30px 30px;
+    }
+
+    .email {
+        background-image: url(/assets/images/email.png);
+    }
+
+    .firstname {
+        background-image: url(/assets/images/person.png);
+    }
+
+    .lastname {
+        background-image: url(/assets/images/person.png);
+    }
+    .phone {
+        background-image: url(/assets/images/phone.png);
+    }
+
+    input[type=text]:focus {
+        outline: none;
+    }
+
+    .submit {
+        width: 80%;
+        border-radius: 1rem;
+        border: 2px solid $dark;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .error {
+        display: flex;
+        align-items: center;
+        height: 3rem;
+        padding: 1rem;
+        border: 2px solid $danger-border !important;
+        border-radius: 0.25rem;
+        background-image: url(/assets/images/danger.png);
+        background-position: 1rem;
+        background-repeat: no-repeat;
+        background-size: 30px 30px;
+        background-color: $danger-bg !important;
+        text-indent: 3rem;
+        color: $danger-color !important;
+    }
+}
