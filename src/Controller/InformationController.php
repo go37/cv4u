@@ -33,7 +33,7 @@ class InformationController extends AbstractController
             }
         }
         return $this->renderForm('information/index.html.twig', [
-            'form' => $form,
+            'informationForm' => $form,
         ]);
     }
 }

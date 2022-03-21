@@ -6,13 +6,15 @@ use App\Entity\School;
 use App\Form\SchoolType;
 use App\Repository\SchoolRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/school")
+ * @IsGranted("ROLE_USER")
  */
 class SchoolController extends AbstractController
 {

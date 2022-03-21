@@ -14,9 +14,7 @@ class HomeController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
-        ]);
+        return $this->render('home/index.html.twig');
     }
 
     /**
@@ -54,6 +52,7 @@ class HomeController extends AbstractController
 
     /**
      * @Route("/summary", name="summary")
+     * @IsGranted("ROLE_USER")
      */
     public function summary(): Response
     {
@@ -62,6 +61,7 @@ class HomeController extends AbstractController
 
      /**
      * @Route("/profile", name="profile")
+     * @IsGranted("ROLE_USER")
      */
     public function profile(): Response
     {
@@ -70,6 +70,7 @@ class HomeController extends AbstractController
 
      /**
      * @Route("/settings", name="settings")
+     * @IsGranted("ROLE_USER")
      */
     public function settings(): Response
     {
