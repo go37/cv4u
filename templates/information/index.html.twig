@@ -4,13 +4,13 @@
 {% block title %}Your informations{% endblock %}
 
 {% block body %}
-    <section class="information mx-4">
+    <section class="mx-4">
         <h1>Your personnal informations</h1>
         {% if is_granted("ROLE_USER") %}
             {{ include('components/_flash_messages.html.twig') }}
             {{ form_errors(informationForm) }}
             {{ form_start(informationForm) }}
-                <div class="form-information">
+                <div class="form-style">
                     <div class="form-class">
                         <input type="text" id="username" class="email" name="_username" value="{{ app.user.email }}" />
                     </div>

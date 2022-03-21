@@ -25,8 +25,8 @@
                 <td>{{ school.start ? school.start|date('Y-m-d') : '' }}</td>
                 <td>{{ school.end ? school.end|date('Y-m-d') : '' }}</td>
                 <td>
-                    <a href="{{ path('school_show', {'id': school.id}) }}">show</a>
-                    <a href="{{ path('school_edit', {'id': school.id}) }}">edit</a>
+                    <a href="{{ path('school_show', {'id': school.id}) }}" class="read">show</a>
+                    <a href="{{ path('school_edit', {'id': school.id}) }}" class="update">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -37,5 +37,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('school_new') }}">Create new</a>
+    <a href="{{ path('school_new') }}" class="create">Create new</a>
 {% endblock %}

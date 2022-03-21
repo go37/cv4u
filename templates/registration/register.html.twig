@@ -4,11 +4,11 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <section class="register mx-4">
+    <section class="mx-4">
         <h1>Register your account</h1>
         {{ include('components/_flash_messages.html.twig') }}
         {{ form_start(registrationForm) }}
-            <div class="form-register">
+            <div class="form-style">
                 <div class="form-class">
                     {{ form_widget(registrationForm.email, {'attr': {'class': 'email', 'placeholder': 'Email address'}}) }}
                 </div>
