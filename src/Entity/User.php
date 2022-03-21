@@ -50,19 +50,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Assert\NotBlank(message="You must provide a firstname.")
      */
     private ?string $firstname;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Assert\NotBlank(message="You must provide a lastname.")
      */
     private ?string $lastname;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Assert\NotBlank(message="You must provide a phone number.")
      */
     private ?string $phone;
 

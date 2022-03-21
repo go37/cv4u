@@ -14,14 +14,7 @@ class InformationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('firstname', TextType::class, [
-                'mapped' => false,
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Please enter a firstname',
-                    ]),
-                ],
-            ])
+            ->add('firstname', TextType::class)
             ->add('lastname', TextType::class)
             ->add('phone', TextType::class)
         ;
